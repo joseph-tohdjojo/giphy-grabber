@@ -1,0 +1,29 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 44px;
+  grid-template-rows: 44px;
+}
+
+.input,
+.submit {
+  border: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+.input {
+  font-size: 15px;
+  grid-column: 1 / 2;
+  padding: 0 0 0 12px;
+}
+
+.submit {
+  background: linear-gradient(to bottom right, rebeccapurple , tomato);
+  grid-column: 2 / 3;
+  height: 100%;
+
+  img {
+    height: 100%;
+  }
+}

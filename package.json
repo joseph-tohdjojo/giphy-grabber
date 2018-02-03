@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/joseph-tohdjojo/giphy-grabber/issues"
   },
-  "homepage": "https://github.com/joseph-tohdjojo/giphy-grabber#readme"
+  "homepage": "https://github.com/joseph-tohdjojo/giphy-grabber#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.5.1",
+    "postcss-modules": "^1.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
 }

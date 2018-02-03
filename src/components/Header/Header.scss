@@ -1,0 +1,24 @@
+.wrapper {
+  align-items: center;
+  color: white;
+  display: flex;
+  height: 40px;
+  padding: 12px 0 6px;
+
+  h1 {
+    display: inline;
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+
+.logo {
+  align-items: center;
+  display: inline-flex;
+  height: 100%;
+  margin-right: 8px;
+
+  svg {
+    height: 26px;
+  }
+}
