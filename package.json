@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "API_KEY=$API_KEY parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,22 @@
   "homepage": "https://github.com/joseph-tohdjojo/giphy-grabber#readme",
   "devDependencies": {
     "autoprefixer": "^7.2.5",
+    "axios": "^0.17.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.5.1",
+    "postcss-custom-properties": "^6.2.0",
     "postcss-modules": "^1.1.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-masonry-component": "^6.0.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "dependencies": {
+    "react-redux": "^5.0.6"
   }
 }

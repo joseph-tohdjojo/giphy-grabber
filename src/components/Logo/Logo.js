@@ -1,4 +1,5 @@
 import React from 'react'
+import { string } from 'prop-types'
 
 import styles from './Logo.scss'
 
@@ -19,5 +20,9 @@ const Logo = ({className}) => (
     </svg>
   </div>
 )
+
+Logo.propTypes = {
+  className: string,
+}
 
 export default Logo
