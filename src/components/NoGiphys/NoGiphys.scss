@@ -1,0 +1,32 @@
+@import '../../styles/base/global-variables';
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  font-size: 22px;
+  font-weight: 900;
+  justify-content: space-between;
+  line-height: 1.4;
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+
+  h1 span {
+    font-size: 72px;
+    position: relative;
+    text-align: right;
+  }
+}
+
+.sorry {
+  display: inline-block;
+  fill: $color-grey;
+  margin-right: 20px;
+  position: relative;
+  top: 5px;
+  width: 60px;
+
+  svg {
+    width: 100%;
+  }
+}
