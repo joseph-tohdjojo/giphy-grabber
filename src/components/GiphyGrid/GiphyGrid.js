@@ -21,7 +21,7 @@ class GiphyGrid extends React.Component {
     if(giphys.length === 0 && !giphyStatus.isFetching) return <NoGiphys />
 
     const giphyEls = giphys && giphys.length > 0
-      ? giphys.map((giphy, i) => <Giphy key={i} giphy={giphy} />)
+      ? giphys.map((giphy, i) => <Giphy key={giphy.id} giphy={giphy} />)
       : []
 
     const masonryOptions = {
