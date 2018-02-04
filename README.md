@@ -19,8 +19,6 @@ Simply run `npm start` with `API_KEY` environment variable equal to your [Giphy 
 $ API_KEY=<YOUR API KEY HERE> npm start
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Built With
 
 * [ReactJS](https://reactjs.org) - A JavaScript library for building user interfaces
