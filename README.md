@@ -13,7 +13,9 @@ What things you need to install the software and how to install them
 
 ### Installing
 
-Simply run `npm start` with `API_KEY` environment variable equal to your [Giphy API key](https://developers.giphy.com/docs/#getting-started)
+Run `npm install` to install all of the dependencies needed to run this application.
+
+The project uses [ParcelJS](https://parceljs.org) for bundling. Once all dependencies are installed, simply run `npm start` with `API_KEY` environment variable equal to your [Giphy API key](https://developers.giphy.com/docs/#getting-started). Example:
 
 ```
 $ API_KEY=<YOUR API KEY HERE> npm start
