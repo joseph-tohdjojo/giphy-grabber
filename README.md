@@ -13,8 +13,6 @@ What things you need to install the software and how to install them
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
 Simply run `npm start` with `API_KEY` environment variable equal to your [Giphy API key](https://developers.giphy.com/docs/#getting-started)
 
 ```
