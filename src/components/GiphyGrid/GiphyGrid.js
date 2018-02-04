@@ -2,10 +2,12 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Masonry from 'react-masonry-component'
 
+import styles from './GiphyGrid.scss'
 import { fetchGiphysIfNeeded } from '../redux/action.creators'
 
 // components
 import Giphy from '../Giphy/Giphy'
+import Loading from '../Loading/Loading'
 import NoGiphys from '../NoGiphys/NoGiphys'
 
 class GiphyGrid extends React.Component {
@@ -15,7 +17,6 @@ class GiphyGrid extends React.Component {
 
   render() {
     const {giphys, giphyStatus} = this.props
-    console.log(giphyStatus, giphys);
 
     if(giphys.length === 0 && !giphyStatus.isFetching) return <NoGiphys />
 
@@ -24,22 +25,25 @@ class GiphyGrid extends React.Component {
       : []
 
     const masonryOptions = {
+      horizontalOrder: true,
       itemSelector: '.masonry-grid-item',
       transitionDuration: 600,
     }
 
     return (
-      <Masonry
-        className={'masonry-grid'}
-        elementType={'ul'}
-        onImagesLoaded={loaded => ''}
-        onLayoutComplete={items => ''}
-        options={masonryOptions}
-        disableImagesLoaded={false}
-        updateOnEachImageLoad={true}
-      >
-        { giphyEls }
-      </Masonry>
+      giphyStatus.isFetching
+      ? <Loading />
+      : <Masonry
+          className={`masonry-grid ${styles.wrapper}`}
+          elementType={'ul'}
+          onImagesLoaded={loaded => ''}
+          onLayoutComplete={items => ''}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={true}
+        >
+          { giphyEls }
+        </Masonry>
     )
   }
 }

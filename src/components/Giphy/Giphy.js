@@ -26,14 +26,17 @@ class Giphy extends React.Component {
         onMouseLeave={e => this.setState({src: giphy.images.fixed_width_still.url, hovering: false})}
         style={{
           backgroundColor: backgroundColors[Math.floor(Math.random() * (4+1))],
-          height: giphy.images.fixed_width.height,
+          height: giphy.images.fixed_width_still.height,
         }}
       >
         <a href={giphy.bitly_url}>
           <div className={styles.overlay}>
             <p>{giphy.title}</p>
           </div>
-          <img src={this.state.src} />
+          <img
+            src={this.state.src}
+            style={{height: giphy.images.fixed_width_still.height}}
+          />
         </a>
       </li>
     )
