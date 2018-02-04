@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './Giphy.scss'
 
@@ -41,6 +42,10 @@ class Giphy extends React.Component {
       </li>
     )
   }
+}
+
+Giphy.propTypes = {
+  giphy: PropTypes.object.isRequired,
 }
 
 export default Giphy

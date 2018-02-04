@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import { fetchGiphysIfNeeded } from '../redux/action.creators'
 import styles from './Search.scss'
 
@@ -9,10 +11,6 @@ class Search extends Component {
 
   handleSubmit = this.handleSubmit.bind(this)
   handlePrevSearchClick = this.handlePrevSearchClick.bind(this)
-
-  componentWillMount() {
-
-  }
 
   handleSubmit(e) {
     e.preventDefault()
@@ -60,12 +58,9 @@ class Search extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  // console.log(state);
-  return {
-    searchHistory: state.search.searchHistory,
-  }
-}
+const mapStateToProps = (state, ownProps) => ({
+  searchHistory: state.search.searchHistory,
+})
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   submitSearch(search) {
@@ -73,5 +68,10 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(fetchGiphysIfNeeded(trimmedSearch))
   },
 })
+
+Search.propTypes = {
+  searchHistory: PropTypes.arrayOf(PropTypes.string).isRequired,
+  submitSearch: PropTypes.func.isRequired,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

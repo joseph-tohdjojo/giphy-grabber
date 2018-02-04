@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Masonry from 'react-masonry-component'
+import PropTypes from 'prop-types'
 
 import styles from './GiphyGrid.scss'
 import { fetchGiphysIfNeeded } from '../redux/action.creators'
@@ -17,7 +18,6 @@ class GiphyGrid extends React.Component {
 
   render() {
     const {giphys, giphyStatus} = this.props
-
     if(giphys.length === 0 && !giphyStatus.isFetching) return <NoGiphys />
 
     const giphyEls = giphys && giphys.length > 0
@@ -56,7 +56,13 @@ const mapStateToProps = ({giphys, search}, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getTrendingGiphys() {
     dispatch(fetchGiphysIfNeeded('trending', true))
-  }
+  },
 })
+
+GiphyGrid.propTypes = {
+  getTrendingGiphys: PropTypes.func.isRequired,
+  giphys: PropTypes.arrayOf(PropTypes.object),
+  giphyStatus: PropTypes.object.isRequired,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(GiphyGrid)

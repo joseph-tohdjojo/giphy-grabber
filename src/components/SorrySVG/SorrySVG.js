@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const SorrySVG = ({className}) => (
   <div className={className}>
@@ -9,5 +10,13 @@ const SorrySVG = ({className}) => (
     </svg>
   </div>
 )
+
+SorrySVG.defaultProps = {
+  className: '',
+}
+
+SorrySVG.propTypes = {
+  className: PropTypes.string.isRequired,
+}
 
 export default SorrySVG

@@ -21,8 +21,12 @@ const Logo = ({className}) => (
   </div>
 )
 
+Logo.defaultProps = {
+  className: '',
+}
+
 Logo.propTypes = {
-  className: string,
+  className: string.isRequired,
 }
 
 export default Logo
