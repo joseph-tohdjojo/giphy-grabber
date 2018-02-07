@@ -1,6 +1,6 @@
 # Giphy Grabber
 
-A simple app to grab some Giphys!
+A simple app to grab some Giphys! [Live demo!](https://youthful-lalande-ac1fec.netlify.com/)
 
 ## Getting Started
 
