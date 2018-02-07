@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "API_KEY=$API_KEY parcel src/index.html"
+    "start": "API_KEY=$API_KEY parcel src/index.html",
+    "build": "API_KEY=$API_KEY parcel build src/index.html -d build --public-url ./"
   },
   "repository": {
     "type": "git",
