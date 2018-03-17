@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "API_KEY=$API_KEY parcel src/index.html",
-    "build": "API_KEY=$API_KEY parcel build src/index.html -d build --public-url ./"
+    "clean": "rm-cli build/* .cache/*",
+    "start": "API_KEY=$API_KEY npm run clean && concurrently \"npm run build:dev\" \"npm run prettier:watch\"",
+    "build": "API_KEY=$API_KEY npm run clean && npm run build:prod",
+    "build:dev": "parcel src/index.html -d build",
+    "build:prod": "parcel build src/index.html -d build --public-url ./",
+    "prettier:watch": "onchange 'src/**/*.js' -- prettier --write {{changed}}"
   },
   "repository": {
     "type": "git",
@@ -21,19 +25,24 @@
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "axios": "^0.17.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "concurrently": "^3.5.1",
     "node-sass": "^4.7.2",
-    "parcel-bundler": "^1.5.1",
+    "onchange": "^3.3.0",
+    "parcel-bundler": "^1.6.2",
     "postcss-custom-properties": "^6.2.0",
     "postcss-modules": "^1.1.0",
+    "prettier": "^1.11.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-masonry-component": "^6.0.2",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "rm-cli": "^1.4.2"
   },
   "dependencies": {
     "react-redux": "^5.0.6"

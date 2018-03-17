@@ -37,7 +37,7 @@ export const invalidateSearch = search => {
   }
 }
 
-export const fetchGiphys = search => {
+export const fetchGiphys = (search) => {
   return function(dispatch) {
     dispatch(requestGiphys(search))
 

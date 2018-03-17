@@ -7,10 +7,11 @@ import {
 export const search = (state = { currentSearch: '', searchHistory: [] }, action) => {
   switch (action.type) {
     case SUBMIT_SEARCH:
+      let searchHistory = state.searchHistory.indexOf(action.search) > -1 ? state.searchHistory : [ action.search, ...state.searchHistory ]
       return {
         ...state,
         currentSearch: action.search,
-        searchHistory: [action.search, ...state.searchHistory],
+        searchHistory,
       }
     default:
       return state
