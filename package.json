@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm-cli build/* .cache/*",
     "start": "API_KEY=$API_KEY npm run clean && concurrently \"npm run build:dev\" \"npm run prettier:watch\"",
-    "prod": "npm run clean && npm run build:prod",
+    "prod": "API_KEY=$API_KEY npm run clean && npm run build:prod",
     "build:dev": "parcel src/index.html -d build",
     "build:prod": "parcel build src/index.html -d build --public-url ./",
     "prettier:watch": "onchange 'src/**/*.js' -- prettier --write {{changed}}"
