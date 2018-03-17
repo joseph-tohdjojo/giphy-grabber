@@ -11,7 +11,8 @@ const NoGiphys = () => (
       <span>
         <SorrySVG className={styles.sorry} />
         Sorry,
-      </span><br/>
+      </span>
+      <br />
       We couldn't find any Giphys for that search
     </h1>
   </div>

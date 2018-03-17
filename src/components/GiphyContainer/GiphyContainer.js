@@ -7,10 +7,12 @@ import styles from './GiphyContainer.scss'
 // components
 import GiphyGrid from '../GiphyGrid/GiphyGrid'
 
-const GiphyContainer = ({currentSearch, ...props}) => (
+const GiphyContainer = ({ currentSearch, ...props }) => (
   <div className={styles.wrapper}>
     <div className={styles.title}>
-      <h1><b>Showing results for:</b> {currentSearch}</h1>
+      <h1>
+        <b>Showing results for:</b> {currentSearch}
+      </h1>
     </div>
     <GiphyGrid />
   </div>

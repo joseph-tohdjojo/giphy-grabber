@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom'
 // other dependencies
 import './index.scss'
 
-if(process.env.API_KEY.length === 0) {
+if (process.env.API_KEY.length === 0) {
   // alert(`YOU FORGOT TO SET YOUR API KEY`)
   console.log(`
 ██████╗  ██████╗ ██╗  ██╗██╗
@@ -19,14 +19,13 @@ if(process.env.API_KEY.length === 0) {
 ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝
 
 * You forgot to set your API Key *
-  `)
-  import('./components/NoAPIKey/NoAPIKey')
-    .then(mod => {
-      const NoAPIKey = mod.default
-      ReactDOM.render(<NoAPIKey />, document.getElementById('root'))
-    })
+`)
+  import('./components/NoAPIKey/NoAPIKey').then(mod => {
+    const NoAPIKey = mod.default
+    ReactDOM.render(<NoAPIKey />, document.getElementById('root'))
+  })
 } else {
-console.log(`
+  console.log(`
 Made by:
 ███╗   ███╗██████╗    ██╗  ██╗ █████╗ ███╗   ███╗██████╗ ██╗   ██╗██████╗  ██████╗ ███████╗██████╗
 ████╗ ████║██╔══██╗   ██║  ██║██╔══██╗████╗ ████║██╔══██╗██║   ██║██╔══██╗██╔════╝ ██╔════╝██╔══██╗
@@ -35,9 +34,8 @@ Made by:
 ██║ ╚═╝ ██║██║  ██║██╗██║  ██║██║  ██║██║ ╚═╝ ██║██████╔╝╚██████╔╝██║  ██║╚██████╔╝███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
 `)
-  import('./components/App/App')
-    .then(mod => {
-      const App = mod.default
-      ReactDOM.render(<App />, document.getElementById('root'))
-    })
+  import('./components/App/App').then(mod => {
+    const App = mod.default
+    ReactDOM.render(<App />, document.getElementById('root'))
+  })
 }

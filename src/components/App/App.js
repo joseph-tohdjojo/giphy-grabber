@@ -11,9 +11,7 @@ import Search from '../Search/Search'
 
 const App = () => (
   <Provider store={store}>
-    <div
-      className={styles.wrapper}
-    >
+    <div className={styles.wrapper}>
       <Header />
       <Search />
       <GiphyContainer />

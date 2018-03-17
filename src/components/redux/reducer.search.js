@@ -1,13 +1,15 @@
-import {
-  RECEIVE_GIPHYS,
-  REQUEST_GIPHYS,
-  SUBMIT_SEARCH,
-} from './action.types'
+import { RECEIVE_GIPHYS, REQUEST_GIPHYS, SUBMIT_SEARCH } from './action.types'
 
-export const search = (state = { currentSearch: '', searchHistory: [] }, action) => {
+export const search = (
+  state = { currentSearch: '', searchHistory: [] },
+  action,
+) => {
   switch (action.type) {
     case SUBMIT_SEARCH:
-      let searchHistory = state.searchHistory.indexOf(action.search) > -1 ? state.searchHistory : [ action.search, ...state.searchHistory ]
+      let searchHistory =
+        state.searchHistory.indexOf(action.search) > -1
+          ? state.searchHistory
+          : [action.search, ...state.searchHistory]
       return {
         ...state,
         currentSearch: action.search,
@@ -23,7 +25,7 @@ const giphys = (
     isFetching: false,
     items: [],
   },
-  action
+  action,
 ) => {
   switch (action.type) {
     case REQUEST_GIPHYS:

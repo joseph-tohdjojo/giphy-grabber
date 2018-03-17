@@ -18,7 +18,8 @@
     width: 25%;
   }
 
-  a, img {
+  a,
+  img {
     width: 100%;
   }
 
@@ -39,7 +40,11 @@
 
   p {
     align-items: flex-end;
-    background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.3));
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0),
+      hsla(0, 0%, 0%, 0.3)
+    );
     color: white;
     display: flex;
     height: 100%;

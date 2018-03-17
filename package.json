@@ -8,7 +8,7 @@
     "start": "API_KEY=$API_KEY npm run clean && concurrently \"npm run build:dev\" \"npm run prettier:watch\"",
     "build:dev": "parcel src/index.html -d build",
     "prod": "API_KEY=$API_KEY parcel build src/index.html -d build --public-url ./",
-    "prettier:watch": "onchange 'src/**/*.js' -- prettier --write {{changed}}"
+    "prettier:watch": "onchange 'src/**/*.js' 'src/**/*.scss' -- prettier --write {{changed}}"
   },
   "repository": {
     "type": "git",
